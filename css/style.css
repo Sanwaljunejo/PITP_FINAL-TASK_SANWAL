@@ -81,10 +81,12 @@ body {
   position: absolute;
   inset: 0;
   background-size: cover;
-  background-position: center;
+  background-position: center center;  /* ensures center of image */
+  background-repeat: no-repeat;        /* optional but safe */
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }
+
 
 .slide.active {
   opacity: 1;
