@@ -436,6 +436,7 @@ section h2::after {
   font-size: 1rem;
 }
 
+
 /* Grid */
 .product-grid {
   display: grid;
@@ -668,6 +669,10 @@ section h2::after {
   justify-content: center;
 }
 .item img{
+  object-fit: cover;
+}
+
+.product-card img{
   object-fit: cover;
 }
 
