@@ -1,4 +1,4 @@
-/* ================= HERO SLIDER ================= */
+
 
 const slides = document.querySelectorAll(".slide");
 const heroText = document.querySelector(".hero-text");
@@ -29,7 +29,7 @@ if (slides.length && heroText && title && description) {
   }, 5000);
 }
 
-/* ================= HAMBURGER MENU ================= */
+
 
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
@@ -40,7 +40,7 @@ if (hamburger && navLinks) {
   });
 }
 
-/* ================= PRODUCT SEARCH FILTER ================= */
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("searchInput");
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-// Contact Form
+
 
 const form = document.getElementById("contactForm");
 
