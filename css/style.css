@@ -640,6 +640,12 @@ section h2 {
     section h2 {
     font-size: 1.9rem;
   }
+  .best-sellers .item img{
+    flex-direction: column;
+  }
+
+
+
 
   .container {
     padding: 40px 16px;
