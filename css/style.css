@@ -207,7 +207,7 @@ text-align: center;
 }
 
 .items img{
-  width: 400px;
+  width: 300px;
   height: 250px;
 }
 
@@ -682,7 +682,7 @@ section h2 {
   justify-content: center;
 }
 .item img{
-    width: 100%;    /* scale to container */
+    width: 85%;    /* scale to container */
     height: auto;   /* keep aspect ratio */
 }
  .hero-text {
