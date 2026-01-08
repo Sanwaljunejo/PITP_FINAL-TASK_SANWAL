@@ -42,19 +42,22 @@ if (hamburger && navLinks) {
 
 /* ================= PRODUCT SEARCH FILTER ================= */
 
-const searchInput = document.getElementById("searchInput");
-const productCards = document.querySelectorAll(".product-card");
+document.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.getElementById("searchInput");
+  const productCards = document.querySelectorAll(".product-card");
 
-if (searchInput && productCards.length) {
-  searchInput.addEventListener("input", () => {
-    const value = searchInput.value.toLowerCase().trim();
+  if (searchInput && productCards.length) {
+    searchInput.addEventListener("input", () => {
+      const value = searchInput.value.toLowerCase().trim();
 
-    productCards.forEach(card => {
-      const name = card.dataset.name.toLowerCase();
-      card.style.display = name.includes(value) ? "block" : "none";
+      productCards.forEach(card => {
+        const name = card.dataset.name.toLowerCase();
+        card.style.display = name.includes(value) ? "" : "none";
+      });
     });
-  });
-}
+  }
+});
+// Contact Form
 
 const form = document.getElementById("contactForm");
 

@@ -147,9 +147,11 @@ body {
   flex-wrap: wrap;
   background-color: whitesmoke;
   color: black;
+  margin-top: 10px;
 }
 
 .feature {
+
   box-sizing: border-box;
   width: 25%;                 /* Desktop: 4 in a row */
   padding: 24px 16px;
@@ -684,8 +686,7 @@ section h2 {
 .item img{
     width: 100%;    /* scale to container */
     height: 250px;   /* keep aspect ratio */
-    margin-left: 4px;
-    margin-right: 4px;
+    
 }
  .hero-text {
     padding: 0 25px;
