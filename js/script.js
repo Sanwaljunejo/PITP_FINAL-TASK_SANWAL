@@ -1,11 +1,5 @@
-const products = [
-  { name: "Smart Watch", price: "$199" },
-  { name: "Wireless Headphones", price: "$149" },
-  { name: "Gaming Mouse", price: "$79" },
-  { name: "Bluetooth Speaker", price: "$99" },
-  { name: "Fitness Band", price: "$59" },
-  { name: "VR Headset", price: "$299" }
-];
+/* ================= HERO SLIDER ================= */
+
 const slides = document.querySelectorAll(".slide");
 const heroText = document.querySelector(".hero-text");
 const title = document.getElementById("hero-title");
@@ -13,73 +7,86 @@ const description = document.getElementById("hero-description");
 
 let currentSlide = 0;
 
-function changeSlide(index) {
-  // Hide text first
-  heroText.classList.remove("show");
+if (slides.length && heroText && title && description) {
+  heroText.classList.add("show");
 
-  setTimeout(() => {
-    // Change slide
-    slides.forEach(slide => slide.classList.remove("active"));
-    const activeSlide = slides[index];
-    activeSlide.classList.add("active");
+  setInterval(() => {
+    heroText.classList.remove("show");
 
-    // Update text
-    title.innerHTML = activeSlide.dataset.title;
-    description.textContent = activeSlide.dataset.text;
+    setTimeout(() => {
+      slides.forEach(slide => slide.classList.remove("active"));
+      currentSlide = (currentSlide + 1) % slides.length;
 
-    // Show text again
-    heroText.classList.add("show");
-  }, 300);
+      const activeSlide = slides[currentSlide];
+      activeSlide.classList.add("active");
+
+      title.innerHTML = activeSlide.dataset.title;
+      description.textContent = activeSlide.dataset.text;
+
+      heroText.classList.add("show");
+    }, 300);
+
+  }, 5000);
 }
 
-// Initial animation
-heroText.classList.add("show");
+/* ================= HAMBURGER MENU ================= */
 
-// Auto slide every 4 seconds
-setInterval(() => {
-  currentSlide = (currentSlide + 1) % slides.length;
-  changeSlide(currentSlide);
-}, 5000);
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
 
-
-
-renderProducts(products, grid);
-renderProducts(products.slice(0,3), bestGrid);
-
-// SEARCH FILTER
-const search = document.querySelector("#searchInput");
-if (search) {
-  search.addEventListener("input", () => {
-    const value = search.value.toLowerCase();
-    const filtered = products.filter(p =>
-      p.name.toLowerCase().includes(value)
-    );
-    renderProducts(filtered, grid);
+if (hamburger && navLinks) {
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
   });
 }
 
-// FORM VALIDATION
-const form = document.querySelector("#contactForm");
+/* ================= PRODUCT SEARCH FILTER ================= */
+
+const searchInput = document.getElementById("searchInput");
+const productCards = document.querySelectorAll(".product-card");
+
+if (searchInput && productCards.length) {
+  searchInput.addEventListener("input", () => {
+    const value = searchInput.value.toLowerCase().trim();
+
+    productCards.forEach(card => {
+      const name = card.dataset.name.toLowerCase();
+      card.style.display = name.includes(value) ? "block" : "none";
+    });
+  });
+}
+
+const form = document.getElementById("contactForm");
+
 if (form) {
-  form.addEventListener("submit", e => {
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const name = document.querySelector("#name").value.trim();
-    const email = document.querySelector("#email").value;
-    const message = document.querySelector("#message").value;
-    const error = document.querySelector("#formError");
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+    const error = document.getElementById("formError");
 
-    if (!name) return error.textContent = "Name required";
-    if (!email.includes("@")) return error.textContent = "Invalid email";
-    if (message.length < 10) return error.textContent = "Message too short";
+    error.style.color = "red";
 
-    error.textContent = "Form submitted successfully!";
+    if (name === "") {
+      error.textContent = "Name cannot be empty.";
+      return;
+    }
+
+    if (!email.includes("@") || !email.includes(".")) {
+      error.textContent = "Please enter a valid email address.";
+      return;
+    }
+
+    if (message.length < 10) {
+      error.textContent = "Message must be at least 10 characters long.";
+      return;
+    }
+
     error.style.color = "green";
+    error.textContent = "Message sent successfully!";
+
     form.reset();
   });
 }
-
-// HAMBURGER
-document.querySelector(".hamburger")?.addEventListener("click", () => {
-  document.querySelector(".nav-links").classList.toggle("active");
-});

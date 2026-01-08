@@ -6,14 +6,15 @@
     <title>Products</title>
 </head>
 <body>
+
 <header class="header">
   <div class="logo">TechZone</div>
   <nav class="nav">
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
       <li><a href="products.html">Products</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <div class="hamburger">&#9776;</div>
@@ -21,14 +22,76 @@
 </header>
 
 
-<main class="container">
+<main class="container products-page">
 
-<h2>Our Products</h2>
-<input type="text" id="searchInput" placeholder="Search gadgets..." />
+  <section class="products-header">
+    <h2>Our Products</h2>
+    <p>Premium gadgets designed for modern tech users</p>
 
-<div class="product-grid" id="productGrid"></div>
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search products..."
+      aria-label="Search products"
+    />
+  </section>
+
+  <section class="product-grid">
+
+    <article class="product-card" data-name="smart watch">
+      <img src="/img/p1.jpg" alt="smart wathc">
+      <h3>Amaze Fit GTS</h3>
+      <span class="price">$344.99</span>
+    </article>
+
+    <article class="product-card" data-name="air buds">
+      <img src="/img/p10.jpg" alt="air buds">
+      <h3>AirPods 5</h3>
+      <span class="price">$179.99</span>
+    </article>
+
+    <article class="product-card" data-name="headphone">
+      <img src="/img/p11.jpeg" alt="Headphone">
+      <h3>Headphone & Mic</h3>
+      <span class="price">$39.99</span>
+    </article>
+
+    <article class="product-card" data-name="smart watch">
+      <img src="/img/p2.jpeg" alt="smart watch">
+      <h3>JS Smart Watch 6</h3>
+      <span class="price">$89.99</span>
+    </article>
+
+    <article class="product-card" data-name="smart watch">
+      <img src="/img/p3.png" alt="smart watch">
+      <h3>Apple Watch 3</h3>
+      <span class="price">$100.99</span>
+    </article>
+    <article class="product-card" data-name="nikon">
+      <img src="/img/p4.jpg" alt="nikon">
+      <h3>Nikon X-X Lens </h3>
+      <span class="price">$400.99</span>
+    </article>
+    <article class="product-card" data-name="cam">
+      <img src="/img/p6.jpg" alt="cam">
+      <h3>Nikon Fuji XT - 5</h3>
+      <span class="price">$1900.99</span>
+    </article>
+    <article class="product-card" data-name="laptop">
+      <img src="/img/p8.jpeg" alt="victus">
+      <h3>HP Victus 13 Gen </h3>
+      <span class="price">$2900.99</span>
+    </article>
+    <article class="product-card" data-name="laptop">
+      <img src="/img/images 9.jpeg" alt="victus">
+      <h3>Asus Dual GeForce 8GB </h3>
+      <span class="price">$500.99</span>
+    </article>
+
+  </section>
 
 </main>
+
 <footer class="footer">
   <p>© 2026 TechZone Tech Store. All Rights Reserved.</p>
 </footer>  

@@ -1,26 +1,73 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
-    <title>Contact Us</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | TechZone</title>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-<main class="container">
 
-<h2>Contact Support</h2>
+<header class="header">
+  <div class="logo">TechZone</div>
+  <nav class="nav">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <div class="hamburger">&#9776;</div>
+  </nav>
+</header>
 
-<form id="contactForm">
-  <input type="text" id="name" placeholder="Name">
-  <input type="email" id="email" placeholder="Email">
-  <input type="text" id="orderId" placeholder="Order ID (optional)">
-  <textarea id="message" placeholder="Message"></textarea>
-  <button type="submit">Submit</button>
-  <p id="formError"></p>
-</form>
+<main class="container contact-page">
+
+  <!-- Contact Info -->
+  <section class="contact-info">
+    <div>
+      <h3>📍 Our Location</h3>
+      <p>TechZone Store<br>Karachi, Pakistan</p>
+    </div>
+    <div>
+      <h3>📞 Phone</h3>
+      <p>+92 300 1234567</p>
+    </div>
+    <div>
+      <h3>✉ Email</h3>
+      <p>support@techzone.com</p>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="map-section">
+    <iframe 
+      src="https://www.google.com/maps?q=karachi&output=embed"
+      loading="lazy">
+    </iframe>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="contact-container">
+    <h2>Contact Support</h2>
+
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Full Name">
+      <input type="email" id="email" placeholder="Email Address">
+      <input type="text" id="orderId" placeholder="Order ID (optional)">
+      <textarea id="message" placeholder="Write your message..."></textarea>
+      <button type="submit">Send Message</button>
+      <p id="formError"></p>
+    </form>
+  </section>
 
 </main>
 
-    
+<footer class="footer">
+  <p>© 2026 TechZone Tech Store. All Rights Reserved.</p>
+</footer>
+
+<script src="/js/script.js"></script>
 </body>
 </html>
