@@ -640,10 +640,6 @@ section h2 {
     section h2 {
     font-size: 1.9rem;
   }
-  .best-sellers .item img{
-    flex-direction: column;
-  }
-
 
 
 
@@ -676,8 +672,14 @@ section h2 {
   justify-content: center;
 }
 .item img{
-  object-fit: cover;
+    width: 100%;    /* scale to container */
+    height: auto;   /* keep aspect ratio */
 }
+ .hero-text {
+    padding: 0 25px;
+  }
 
 }
+
+
 
