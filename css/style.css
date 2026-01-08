@@ -682,8 +682,8 @@ section h2 {
   justify-content: center;
 }
 .item img{
-    width: 85%;    /* scale to container */
-    height: auto;   /* keep aspect ratio */
+    width: 100%;    /* scale to container */
+    height: 250px;   /* keep aspect ratio */
 }
  .hero-text {
     padding: 0 25px;
