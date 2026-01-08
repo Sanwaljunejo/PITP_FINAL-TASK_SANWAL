@@ -684,6 +684,8 @@ section h2 {
 .item img{
     width: 100%;    /* scale to container */
     height: 250px;   /* keep aspect ratio */
+    margin-left: 4px;
+    margin-right: 4px;
 }
  .hero-text {
     padding: 0 25px;
